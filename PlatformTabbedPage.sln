@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage", "Platf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage.Droid", "PlatformTabbedPage.Droid\PlatformTabbedPage.Droid.csproj", "{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage.iOS", "PlatformTabbedPage.iOS\PlatformTabbedPage.iOS.csproj", "{537997E6-3EC7-46F8-8B86-C6D872E1E92B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{537997E6-3EC7-46F8-8B86-C6D872E1E92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537997E6-3EC7-46F8-8B86-C6D872E1E92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537997E6-3EC7-46F8-8B86-C6D872E1E92B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537997E6-3EC7-46F8-8B86-C6D872E1E92B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
