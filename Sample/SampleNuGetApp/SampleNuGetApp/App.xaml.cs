@@ -4,25 +4,28 @@ namespace SampleLocalApp
 {
     public partial class App : Application
     {
-        public static Color[] SelectedColors =
+        public static Color[] HighlightColors =
         {
-            Color.FromHex("3C8A3F"),
-            Color.Green,
-            Color.Fuchsia,
-            Color.Orange,
-            Color.Teal,
-            Color.White,
-            Color.Default
+            Color.FromHex("3C8A3F"), // Mi color
+            Color.FromHex("3C91C8"),
+            Color.FromHex("F75707"),
+            Color.FromHex("AFFF3F"),
+            Color.FromHex("59182A"),
+            Color.FromHex("6616A2"),
+            Color.FromHex("E8B254"),
+            Color.FromHex("A57A30")
         };
 
-        public static Color[] BarBackgroundColors =
+        public static Color[] BackgroundColors =
         {
-            Color.FromHex("eeeef2"),
+            Color.FromHex("eeeef2"), // My color
+            Color.FromHex("FFFFFF"),
+            Color.FromHex("E6E6E6"),
+            Color.FromHex("CACAC9"),
+            Color.FromHex("ADADAC"),
+            Color.FromHex("979796"),
+            Color.FromHex("646464"),
             Color.Black,
-            Color.FromHex("C8C8C8"),
-            Color.FromHex("F0F0F0"),
-            Color.FromHex("909090"),
-            Color.FromHex("A8A8A8"),
             Color.Default
         };
 

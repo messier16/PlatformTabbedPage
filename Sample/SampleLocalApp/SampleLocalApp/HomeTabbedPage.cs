@@ -8,8 +8,8 @@ namespace SampleLocalApp
     {
         public HomeTabbedPage()
         {
-            BarBackgroundColor = App.BarBackgroundColors[3];
-            SelectedColor = App.SelectedColors[0];
+            BarBackgroundColor = App.BackgroundColors[3];
+            SelectedColor = App.HighlightColors[0];
             BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
 
             var page = new ConfigurationPage() { Icon = "config" };
