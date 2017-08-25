@@ -8,16 +8,18 @@ namespace SampleLocalApp
     {
         public HomeTabbedPage()
         {
-            //BarBackgroundColor = App.BarBackgroundColors[3];
-            //SelectedColor = App.SelectedColors[0];
-            //BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
+            BarBackgroundColor = App.BarBackgroundColors[3];
+            SelectedColor = App.SelectedColors[0];
+            BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
 
-            var page = new ConfigurationPage();// { Icon = "feed" };
+            var page = new ConfigurationPage() { Icon = "config" };
+
+            Children.Add(new BasicContentPage("Home") { Icon = "home" });
+            Children.Add(new BasicContentPage("Messages"){ Icon = "message" });
+            Children.Add(new BasicContentPage("Trending"){ Icon = "hashtag" });
+
 
             Children.Add(page);
-            Children.Add(new BasicContentPage("YouTube"));// { Icon = "youtube" });
-            Children.Add(new BasicContentPage("Twitter"));// { Icon = "twitter" });
-            Children.Add(new BasicContentPage("Info"));// { Icon = "info" });
         }
     }
 }
