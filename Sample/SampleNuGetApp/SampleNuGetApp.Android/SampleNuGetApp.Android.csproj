@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{86AFD04D-30E4-44AF-B465-30CA49C6033C}</ProjectGuid>
+    <ProjectGuid>{BE8A189D-3947-4395-AF8D-D8685AB84FF2}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -132,17 +132,9 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\PlatformTabbedPage.Droid\PlatformTabbedPage.Droid.csproj">
-      <Project>{f14c9c7e-f20b-4f73-8b09-76edb87148a0}</Project>
-      <Name>PlatformTabbedPage.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\PlatformTabbedPage\PlatformTabbedPage.csproj">
-      <Project>{a99feee6-582f-4005-90f7-dc4b96228344}</Project>
-      <Name>PlatformTabbedPage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SampleLocalApp\SampleLocalApp.csproj">
-      <Project>{3f2c618b-0897-4b14-936f-4e64e3f60e1b}</Project>
-      <Name>SampleLocalApp</Name>
+    <ProjectReference Include="..\SampleNuGetApp\SampleNuGetApp.csproj">
+      <Project>{0367dd23-d6f9-4052-a353-c3a68f88e85e}</Project>
+      <Name>SampleNuGetApp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
