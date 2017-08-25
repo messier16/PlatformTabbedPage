@@ -133,7 +133,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PlatformTabbedPage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PlatformTabbedPage.1.0.0-pre\lib\Xamarin.iOS10\PlatformTabbedPage.dll</HintPath>
+      <HintPath>..\..\packages\PlatformTabbedPage.1.0.1-pre\lib\Xamarin.iOS10\PlatformTabbedPage.dll</HintPath>
+    </Reference>
+    <Reference Include="PlatformTabbedPage.iOS, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PlatformTabbedPage.1.0.1-pre\lib\Xamarin.iOS10\PlatformTabbedPage.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />

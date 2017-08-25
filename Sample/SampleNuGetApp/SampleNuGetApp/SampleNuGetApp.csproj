@@ -7,7 +7,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="PlatformTabbedPage" Version="1.0.0-pre" />
+    <PackageReference Include="PlatformTabbedPage" Version="1.0.1-pre" />
     <PackageReference Include="Xamarin.Forms" Version="2.3.4.267" />
   </ItemGroup>
 

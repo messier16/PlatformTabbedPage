@@ -54,7 +54,10 @@
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="PlatformTabbedPage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PlatformTabbedPage.1.0.0-pre\lib\MonoAndroid10\PlatformTabbedPage.dll</HintPath>
+      <HintPath>..\..\packages\PlatformTabbedPage.1.0.1-pre\lib\MonoAndroid10\PlatformTabbedPage.dll</HintPath>
+    </Reference>
+    <Reference Include="PlatformTabbedPage.Droid, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PlatformTabbedPage.1.0.1-pre\lib\MonoAndroid10\PlatformTabbedPage.Droid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
