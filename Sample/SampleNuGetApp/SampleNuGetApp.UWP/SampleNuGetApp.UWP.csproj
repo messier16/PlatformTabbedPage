@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{37971EB4-8167-4C6C-A0DD-6F9A2C3E474F}</ProjectGuid>
+    <ProjectGuid>{7286F725-9843-4557-BA5A-5B202E00489B}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SampleLocalApp.UWP</RootNamespace>
@@ -152,9 +152,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SampleLocalApp\SampleLocalApp.csproj">
-      <Project>{3f2c618b-0897-4b14-936f-4e64e3f60e1b}</Project>
-      <Name>SampleLocalApp</Name>
+    <ProjectReference Include="..\SampleNuGetApp\SampleNuGetApp.csproj">
+      <Project>{0367dd23-d6f9-4052-a353-c3a68f88e85e}</Project>
+      <Name>SampleNuGetApp</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
