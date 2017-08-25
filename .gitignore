@@ -289,3 +289,5 @@ __pycache__/
 
 # Automatically generated Android file
 *Resource.Designer.cs
+
+*.bak
