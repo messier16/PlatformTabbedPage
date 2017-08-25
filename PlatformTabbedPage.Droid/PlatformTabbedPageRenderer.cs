@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using Android.Graphics;
+using Android.Graphics.Drawables;
+using Xamarin.Forms.Platform.Android.AppCompat;
+using Xamarin.Forms;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
-using Xamarin.Forms.Platform.Android.AppCompat;
-using Messier16.Forms.Controls.Droid;
+using Android.Views;
+using Android.Widget;
 using Messier16.Forms.Controls;
-using Android.Graphics.Drawables;
+using Messier16.Forms.Controls.Droid;
+using Xamarin.Forms.Platform.Android;
+using FormsColor = Xamarin.Forms.Color;
 
 [assembly: ExportRenderer(typeof(PlatformTabbedPage), typeof(PlatformTabbedPageRenderer))]
 namespace Messier16.Forms.Controls.Droid
@@ -22,12 +27,16 @@ namespace Messier16.Forms.Controls.Droid
 
         private PlatformTabbedPage FormsTabbedPage => Element as PlatformTabbedPage;
         private Android.Graphics.Color _selectedColor = Android.Graphics.Color.Black;
-        private static readonly Android.Graphics.Color DefaultUnselectedColor = Xamarin.Forms.Color.Gray.Darken().ToAndroid();
+        private static readonly Android.Graphics.Color DefaultUnselectedColor = FormsColor.Gray.Darken().ToAndroid();
         private static Android.Graphics.Color _barBackgroundDefault;
         private Android.Graphics.Color _unselectedColor = DefaultUnselectedColor;
 
         ViewPager _viewPager;
         TabLayout _tabLayout;
+        LinearLayout _tabStrip;
+
+        private const int DeleayBeforeTabAdded = 10;
+        protected readonly Dictionary<Element, BadgeView> BadgeViews = new Dictionary<Element, BadgeView>();
 
         protected override void OnElementChanged(ElementChangedEventArgs<TabbedPage> e)
         {
@@ -45,11 +54,15 @@ namespace Messier16.Forms.Controls.Droid
                     _tabLayout = (TabLayout)v;
             }
 
+            _tabStrip = _tabLayout.FindChildOfType<LinearLayout>();
 
             if (e.OldElement != null)
             {
                 _tabLayout.TabSelected -= TabLayout_TabSelected;
                 _tabLayout.TabUnselected -= TabLayout_TabUnselected;
+
+                Cleanup(e.OldElement);
+                Cleanup(Element);
             }
 
             if (e.NewElement != null)
@@ -64,6 +77,14 @@ namespace Messier16.Forms.Controls.Droid
                 SetupTabColors();
                 SelectTab(0);
             }
+
+            for (var i = 0; i < _tabLayout.TabCount; i++)
+            {
+                AddTabBadge(i);
+            }
+
+            Element.ChildAdded += OnTabAdded;
+            Element.ChildRemoved += OnTabRemoved;
 
         }
 
@@ -128,6 +149,92 @@ namespace Messier16.Forms.Controls.Droid
             }
         }
 
+        private void AddTabBadge(int tabIndex)
+        {
+            var element = Element.Children[tabIndex];
+            var view = _tabLayout?.GetTabAt(tabIndex).CustomView ?? _tabStrip?.GetChildAt(tabIndex);
+
+            var badgeView = (view as ViewGroup)?.FindChildOfType<BadgeView>();
+
+            if (badgeView == null)
+            {
+                var imageView = (view as ViewGroup)?.FindChildOfType<ImageView>();
+
+                var badgeTarget = imageView?.Drawable != null
+                    ? (Android.Views.View)imageView
+                    : (view as ViewGroup)?.FindChildOfType<TextView>();
+
+                //create badge for tab
+                badgeView = new BadgeView(Context, badgeTarget);
+            }
+
+            BadgeViews[element] = badgeView;
+
+            //get text
+            var badgeText = TabBadge.GetBadgeText(element);
+            badgeView.Text = badgeText;
+
+            // set color if not default
+            var tabColor = TabBadge.GetBadgeColor(element);
+            if (tabColor != FormsColor.Default)
+            {
+                badgeView.BadgeColor = tabColor.ToAndroid();
+            }
+
+            // set text color if not default
+            var tabTextColor = TabBadge.GetBadgeTextColor(element);
+            if (tabTextColor != FormsColor.Default)
+            {
+                badgeView.TextColor = tabTextColor.ToAndroid();
+            }
+
+            // set font if not default
+            var font = TabBadge.GetBadgeFont(element);
+            if (font != Font.Default)
+            {
+                badgeView.Typeface = font.ToTypeface();
+            }
+
+            element.PropertyChanged += OnTabbedPagePropertyChanged;
+        }
+
+
+        protected virtual void OnTabbedPagePropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            var element = sender as Element;
+            if (element == null)
+                return;
+
+            if (!BadgeViews.TryGetValue(element, out BadgeView badgeView))
+            {
+                return;
+            }
+
+            if (e.PropertyName == TabBadge.BadgeTextProperty.PropertyName)
+            {
+                badgeView.Text = TabBadge.GetBadgeText(element);
+                return;
+            }
+
+            if (e.PropertyName == TabBadge.BadgeColorProperty.PropertyName)
+            {
+                badgeView.BadgeColor = TabBadge.GetBadgeColor(element).ToAndroid();
+                return;
+            }
+
+            if (e.PropertyName == TabBadge.BadgeTextColorProperty.PropertyName)
+            {
+                badgeView.TextColor = TabBadge.GetBadgeTextColor(element).ToAndroid();
+                return;
+            }
+
+            if (e.PropertyName == TabBadge.BadgeFontProperty.PropertyName)
+            {
+                badgeView.Typeface = TabBadge.GetBadgeFont(element).ToTypeface();
+                return;
+            }
+        }
+
         private void SetSelectedColor()
         {
 
@@ -149,6 +256,48 @@ namespace Messier16.Forms.Controls.Droid
                 _tabLayout.SetBackgroundColor(_barBackgroundDefault);
                 _unselectedColor = DefaultUnselectedColor;
             }
+        }
+
+        private void Cleanup(TabbedPage page)
+        {
+            if (page == null)
+            {
+                return;
+            }
+
+            foreach (var tab in page.Children)
+            {
+                tab.PropertyChanged -= OnTabbedPagePropertyChanged;
+            }
+
+            page.ChildRemoved -= OnTabRemoved;
+            page.ChildAdded -= OnTabAdded;
+
+            BadgeViews.Clear();
+        }
+
+        private void OnTabRemoved(object sender, ElementEventArgs e)
+        {
+            e.Element.PropertyChanged -= OnTabbedPagePropertyChanged;
+            BadgeViews.Remove(e.Element);
+        }
+
+        private async void OnTabAdded(object sender, ElementEventArgs e)
+        {
+            await Task.Delay(DeleayBeforeTabAdded);
+
+            var page = e.Element as Page;
+            if (page == null)
+                return;
+
+            var tabIndex = Element.Children.IndexOf(page);
+            AddTabBadge(tabIndex);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            Cleanup(Element);
+            base.Dispose(disposing);
         }
     }
 }
