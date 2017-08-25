@@ -1,6 +1,7 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "PlatformTabbedPage": "1.0.0-pre",
     "Xamarin.Forms": "2.3.4.267"
   },
   "frameworks": {
