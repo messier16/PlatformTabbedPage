@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Messier16.Forms.Controls.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -18,6 +19,7 @@ namespace SampleLocalApp.Droid
             base.OnCreate(bundle);
 
             Forms.Init(this, bundle);
+            PlatformTabbedPageRenderer.Init();
             LoadApplication(new App());
         }
     }

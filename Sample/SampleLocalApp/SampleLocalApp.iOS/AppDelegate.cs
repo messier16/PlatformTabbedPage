@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Messier16.Forms.Controls.iOS;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -22,7 +23,7 @@ namespace SampleLocalApp.iOS
         {
             Forms.Init();
             LoadApplication(new App());
-
+            PlatformTabbedPageRenderer.Init();
             return base.FinishedLaunching(app, options);
         }
     }
