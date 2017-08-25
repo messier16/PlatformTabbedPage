@@ -20,19 +20,17 @@ namespace SampleLocalApp
             {"Both", BarBackgroundApplyTo.iOS |BarBackgroundApplyTo.Android }
         };
 
-        Label SelectedColorLabel;
-        Label BarbackgroundColorLabel;
-
         public ConfigurationPage()
         {
             int tabColorIndex = 0;
             int tabBackgroundInde = 0;
+            int badgeColor = App.HighlightColors.Length - 1;
+
             Title = "Config";
             var randomSelectedColor = new Button()
             {
                 Text = "Next highlight color"
             };
-            SelectedColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
             randomSelectedColor.Clicked += (sender, args) =>
             {
                 var ran = tabColorIndex++ % App.HighlightColors.Length;
@@ -44,12 +42,22 @@ namespace SampleLocalApp
             {
                 Text = "Next bar background color"
             };
-            BarbackgroundColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
             randomBarBackgroundColor.Clicked += (sender, args) =>
             {
                 var ran = tabBackgroundInde++ % App.BackgroundColors.Length;
                 App.HomeTabbedPage.BarBackgroundColor = App.BackgroundColors[ran];
                 UpdateSelectedColors();
+            };
+
+            var randomBadgeColor = new Button()
+            {
+                Text = "Next badge color"
+            };
+            randomBadgeColor.Clicked += (sender, args) =>
+            {
+                var ran = badgeColor++ % App.HighlightColors.Length;
+                TabBadge.SetBadgeColor(this, App.HighlightColors[ran]);
+                TabBadge.SetBadgeText(this, "10");
             };
 
             var applyToDdl = new Picker();
@@ -68,9 +76,8 @@ namespace SampleLocalApp
             {
                 Children = {
                     randomSelectedColor,
-                    SelectedColorLabel,
                     randomBarBackgroundColor,
-                    BarbackgroundColorLabel,
+                    randomBadgeColor,
                     applyToDdl
                 }
             };
@@ -85,9 +92,6 @@ namespace SampleLocalApp
         {
             var selected = App.HomeTabbedPage.SelectedColor;
             var background = App.HomeTabbedPage.BarBackgroundColor;
-
-            BarbackgroundColorLabel.Text = $"Background R:{background.R * 255:000} G:{background.G * 255:000} B:{background.B * 255:000}";
-            SelectedColorLabel.Text = $"Selected R:{selected.R * 255:000} G:{selected.G * 255:000} B:{selected.B * 255:000}";
         }
     }
 }
