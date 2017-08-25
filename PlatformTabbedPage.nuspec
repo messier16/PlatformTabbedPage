@@ -2,17 +2,17 @@
 <package>
   <metadata>
     <id>PlatformTabbedPage</id>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <title>PlatformTabbedPage for Xamarin.Forms (with Badge support)</title>
     <authors>Antonio Feregrino</authors>
     <owners>Messier16</owners>
-    <projectUrl>https://github.com/Messier16/Forms.Controls</projectUrl>
+    <projectUrl>https://github.com/messier16/PlatformTabbedPage</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/messier16/Forms.Controls/master/m16.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Make your Xamarin.Forms tabbed pages look more familiar to your users. built against 2.3.4.267</description>
     <releaseNotes></releaseNotes>
     <copyright>Antonio Feregrino, 2017</copyright>
-    <tags>Xamarin.Forms, Xamarin, Checkbox, RatingBar</tags>
+    <tags>Xamarin.Forms, Tabs/tags>
     <dependencies>
       <dependency id="Xamarin.Forms" version="2.3.4.267" />
     </dependencies>

@@ -3,7 +3,7 @@ configuration: Release
 before_build:
   - nuget restore
 artifacts:
-  - path: PlatformTabbedPage.1.0.0.nupkg
+  - path: PlatformTabbedPage.1.0.3.nupkg
     name: nuget_pack
 after_build:
   - nuget pack "PlatformTabbedPage.nuspec"
@@ -11,9 +11,9 @@ image: Visual Studio 2017
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
-  assembly_version: '1.0.0'
-  assembly_file_version: '1.0.0'
-  assembly_informational_version: '1.0.0'
+  assembly_version: '1.0.3'
+  assembly_file_version: '1.0.3'
+  assembly_informational_version: '1.0.3'
 build:
   project: PlatformTabbedPage.sln
   publish_nuget: true
