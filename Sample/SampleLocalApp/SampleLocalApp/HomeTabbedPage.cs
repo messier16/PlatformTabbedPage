@@ -15,11 +15,15 @@ namespace SampleLocalApp
             var page = new ConfigurationPage() { Icon = "config" };
 
             Children.Add(new BasicContentPage("Home") { Icon = "home" });
-            Children.Add(new BasicContentPage("Messages"){ Icon = "message" });
-            Children.Add(new BasicContentPage("Trending"){ Icon = "hashtag" });
+            Children.Add(new BasicContentPage("Messages") { Icon = "message" });
+            Children.Add(new BasicContentPage("Trending") { Icon = "hashtag" });
 
 
             Children.Add(page);
+
+            TabBadge.SetBadgeColor(page, Color.Red);
+            page.SetValue(TabBadge.BadgeTextProperty, 10);
+            //page.SetValue(TabBadge.BadgeColorProperty, Color.Red);
         }
     }
 }
