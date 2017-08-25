@@ -7,7 +7,7 @@ artifacts:
     name: nuget_pack
 after_build:
   - nuget pack "PlatformTabbedPage.nuspec"
-image: Visual Studio 2017 RC 
+image: Visual Studio 2017 
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
