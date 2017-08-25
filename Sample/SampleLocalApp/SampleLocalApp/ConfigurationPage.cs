@@ -25,28 +25,30 @@ namespace SampleLocalApp
 
         public ConfigurationPage()
         {
+            int tabColorIndex = 0;
+            int tabBackgroundInde = 0;
             Title = "Config";
             var randomSelectedColor = new Button()
             {
-                Text = "Randomize selected color"
+                Text = "Next highlight color"
             };
             SelectedColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
             randomSelectedColor.Clicked += (sender, args) =>
             {
-                var ran = r.Next(0, App.SelectedColors.Length);
-                App.HomeTabbedPage.SelectedColor = App.SelectedColors[ran];
+                var ran = tabColorIndex++ % App.HighlightColors.Length;
+                App.HomeTabbedPage.SelectedColor = App.HighlightColors[ran];
                 UpdateSelectedColors();
             };
 
             var randomBarBackgroundColor = new Button()
             {
-                Text = "Randomize bar background color"
+                Text = "Next bar background color"
             };
             BarbackgroundColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
             randomBarBackgroundColor.Clicked += (sender, args) =>
             {
-                var ran = r.Next(0, App.BarBackgroundColors.Length);
-                App.HomeTabbedPage.BarBackgroundColor = App.BarBackgroundColors[ran];
+                var ran = tabBackgroundInde++ % App.BackgroundColors.Length;
+                App.HomeTabbedPage.BarBackgroundColor = App.BackgroundColors[ran];
                 UpdateSelectedColors();
             };
 

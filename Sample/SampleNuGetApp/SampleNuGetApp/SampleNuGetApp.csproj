@@ -17,5 +17,11 @@
     <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <EmbeddedResource Include="**\*.xaml" SubType="Designer" Generator="MSBuild:UpdateDesignTimeXaml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\SampleLocalApp\SampleLocalApp\BasicContentPage.cs" Link="BasicContentPage.cs" />
+    <Compile Include="..\..\SampleLocalApp\SampleLocalApp\ConfigurationPage.cs" Link="ConfigurationPage.cs" />
+    <Compile Include="..\..\SampleLocalApp\SampleLocalApp\HomeTabbedPage.cs" Link="HomeTabbedPage.cs" />
+  </ItemGroup>
   
 </Project>

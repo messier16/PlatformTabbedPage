@@ -8,8 +8,8 @@ namespace SampleLocalApp
     {
         public HomeTabbedPage()
         {
-            BarBackgroundColor = App.BarBackgroundColors[3];
-            SelectedColor = App.SelectedColors[0];
+            BarBackgroundColor = App.BackgroundColors[3];
+            SelectedColor = App.HighlightColors[0];
             BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
 
             var page = new ConfigurationPage() { Icon = "config" };
@@ -20,10 +20,7 @@ namespace SampleLocalApp
 
 
             Children.Add(page);
-
-            TabBadge.SetBadgeColor(page, Color.Red);
-            page.SetValue(TabBadge.BadgeTextProperty, 10);
-            //page.SetValue(TabBadge.BadgeColorProperty, Color.Red);
+            
         }
     }
 }
