@@ -114,6 +114,22 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\config%402x.png" />
+    <BundleResource Include="Resources\config%403x.png" />
+    <BundleResource Include="Resources\config_active%402x.png" />
+    <BundleResource Include="Resources\config_active%403x.png" />
+    <BundleResource Include="Resources\hashtag%402x.png" />
+    <BundleResource Include="Resources\hashtag%403x.png" />
+    <BundleResource Include="Resources\hashtag_active%402x.png" />
+    <BundleResource Include="Resources\hashtag_active%403x.png" />
+    <BundleResource Include="Resources\home%402x.png" />
+    <BundleResource Include="Resources\home%403x.png" />
+    <BundleResource Include="Resources\home_active%402x.png" />
+    <BundleResource Include="Resources\home_active%403x.png" />
+    <BundleResource Include="Resources\message%402x.png" />
+    <BundleResource Include="Resources\message%403x.png" />
+    <BundleResource Include="Resources\message_active%402x.png" />
+    <BundleResource Include="Resources\message_active%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
