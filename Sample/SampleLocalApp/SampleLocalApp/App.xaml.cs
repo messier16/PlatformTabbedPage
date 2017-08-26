@@ -13,7 +13,8 @@ namespace SampleLocalApp
             Color.FromHex("59182A"),
             Color.FromHex("6616A2"),
             Color.FromHex("E8B254"),
-            Color.FromHex("A57A30")
+            Color.FromHex("A57A30"),
+            Color.Red
         };
 
         public static Color[] BackgroundColors =

@@ -12,13 +12,10 @@ namespace SampleLocalApp
             SelectedColor = App.HighlightColors[0];
             BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
 
-            var page = new ConfigurationPage() { Icon = "config" };
-
+            var page = new ConfigurationPage() { Icon = "config", Title="Config" };
             Children.Add(new BasicContentPage("Home") { Icon = "home" });
             Children.Add(new BasicContentPage("Messages") { Icon = "message" });
             Children.Add(new BasicContentPage("Trending") { Icon = "hashtag" });
-
-
             Children.Add(page);
             
         }
