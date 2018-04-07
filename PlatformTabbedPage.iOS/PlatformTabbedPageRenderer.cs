@@ -90,8 +90,8 @@ namespace Messier16.Forms.Controls.iOS
 
         private void SetTintedColor()
         {
-            TabBar.TintColor = FormsTabbedPage.SelectedColor != default(Color) ? 
-                FormsTabbedPage.SelectedColor.ToUIColor() : 
+            TabBar.TintColor = FormsTabbedPage.SelectedColor != default(Color) ?
+                FormsTabbedPage.SelectedColor.ToUIColor() :
                 _defaultTintColor;
         }
 

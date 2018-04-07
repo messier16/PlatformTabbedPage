@@ -1,27 +1,26 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
-    <PackageTargetFallback>$(PackageTargetFallback);portable-win+net45+wp8+win81+wpa8</PackageTargetFallback>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
-
-  <ItemGroup>
-    <PackageReference Include="PlatformTabbedPage" Version="1.0.1-pre" />
-    <PackageReference Include="Xamarin.Forms" Version="2.3.4.267" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- https://bugzilla.xamarin.com/show_bug.cgi?id=55591 -->
-    <None Remove="**\*.xaml" />
-    <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
-    <EmbeddedResource Include="**\*.xaml" SubType="Designer" Generator="MSBuild:UpdateDesignTimeXaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Include="..\..\SampleLocalApp\SampleLocalApp\BasicContentPage.cs" Link="BasicContentPage.cs" />
     <Compile Include="..\..\SampleLocalApp\SampleLocalApp\ConfigurationPage.cs" Link="ConfigurationPage.cs" />
     <Compile Include="..\..\SampleLocalApp\SampleLocalApp\HomeTabbedPage.cs" Link="HomeTabbedPage.cs" />
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <PackageReference Include="PlatformTabbedPage" Version="2.0.0-beta" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

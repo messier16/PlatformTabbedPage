@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage", "PlatformTabbedPage\PlatformTabbedPage.csproj", "{E590E797-3A44-4F09-AD65-87BE0F4A93E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage", "PlatformTabbedPage\PlatformTabbedPage.csproj", "{70708F79-CE2B-4CA5-BED0-84A6E0D53C1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage.Droid", "PlatformTabbedPage.Droid\PlatformTabbedPage.Droid.csproj", "{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage.Droid", "PlatformTabbedPage.Droid\PlatformTabbedPage.Droid.csproj", "{9B5BD666-E5EE-469B-9250-D68B553AABDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage.iOS", "PlatformTabbedPage.iOS\PlatformTabbedPage.iOS.csproj", "{537997E6-3EC7-46F8-8B86-C6D872E1E92B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformTabbedPage.iOS", "PlatformTabbedPage.iOS\PlatformTabbedPage.iOS.csproj", "{B2972A59-15F3-4F2E-BA8C-D9588E7428F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E590E797-3A44-4F09-AD65-87BE0F4A93E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E590E797-3A44-4F09-AD65-87BE0F4A93E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E590E797-3A44-4F09-AD65-87BE0F4A93E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E590E797-3A44-4F09-AD65-87BE0F4A93E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F14C9C7E-F20B-4F73-8B09-76EDB87148A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{537997E6-3EC7-46F8-8B86-C6D872E1E92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{537997E6-3EC7-46F8-8B86-C6D872E1E92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{537997E6-3EC7-46F8-8B86-C6D872E1E92B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{537997E6-3EC7-46F8-8B86-C6D872E1E92B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70708F79-CE2B-4CA5-BED0-84A6E0D53C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70708F79-CE2B-4CA5-BED0-84A6E0D53C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70708F79-CE2B-4CA5-BED0-84A6E0D53C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70708F79-CE2B-4CA5-BED0-84A6E0D53C1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B5BD666-E5EE-469B-9250-D68B553AABDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5BD666-E5EE-469B-9250-D68B553AABDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5BD666-E5EE-469B-9250-D68B553AABDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5BD666-E5EE-469B-9250-D68B553AABDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2972A59-15F3-4F2E-BA8C-D9588E7428F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2972A59-15F3-4F2E-BA8C-D9588E7428F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2972A59-15F3-4F2E-BA8C-D9588E7428F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2972A59-15F3-4F2E-BA8C-D9588E7428F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7A11E4C-952E-462F-9B1B-D1FAC9875968}
 	EndGlobalSection
 EndGlobal

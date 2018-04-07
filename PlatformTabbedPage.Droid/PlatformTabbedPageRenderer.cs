@@ -7,8 +7,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Platform.Android.AppCompat;
 using Messier16.Forms.Controls.Droid;
-using Messier16.Forms.Controls;
 using Android.Graphics.Drawables;
+using Android.Content;
+using Messier16.Forms.Controls;
 
 [assembly: ExportRenderer(typeof(PlatformTabbedPage), typeof(PlatformTabbedPageRenderer))]
 namespace Messier16.Forms.Controls.Droid
@@ -28,6 +29,10 @@ namespace Messier16.Forms.Controls.Droid
 
         ViewPager _viewPager;
         TabLayout _tabLayout;
+
+        public PlatformTabbedPageRenderer(Context context) : base(context)
+        {
+        }
 
         protected override void OnElementChanged(ElementChangedEventArgs<TabbedPage> e)
         {
