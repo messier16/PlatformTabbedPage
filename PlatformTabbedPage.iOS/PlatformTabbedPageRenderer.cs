@@ -19,6 +19,7 @@ namespace Messier16.Forms.Controls.iOS
         PlatformTabbedPage FormsTabbedPage => Element as PlatformTabbedPage;
         UIColor _defaultTintColor;
         UIColor _defaultBarBackgroundColor;
+        UIBarStyle _barStyle;
 
         protected override void OnElementChanged(VisualElementChangedEventArgs e)
         {
@@ -35,7 +36,8 @@ namespace Messier16.Forms.Controls.iOS
             }
 
             _defaultTintColor = TabBar.TintColor;
-            _defaultBarBackgroundColor = TabBar.BackgroundColor;
+            _defaultBarBackgroundColor = UIColor.Black;
+            _barStyle = UIBarStyle.Default;
         }
 
         void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -43,8 +45,10 @@ namespace Messier16.Forms.Controls.iOS
             switch (e.PropertyName)
             {
                 case nameof(PlatformTabbedPage.BarBackgroundColor):
+                case nameof(PlatformTabbedPage.BarStyle):
                 case nameof(PlatformTabbedPage.BarBackgroundApplyTo):
                     SetBarBackgroundColor();
+                    SetBarStyle();
                     SetTintedColor();
                     break;
                 case nameof(PlatformTabbedPage.SelectedColor):
@@ -58,6 +62,7 @@ namespace Messier16.Forms.Controls.iOS
 
             if (TabBar?.Items == null)
                 return;
+            SetBarStyle();
             SetTintedColor();
             SetBarBackgroundColor();
 
@@ -107,6 +112,10 @@ namespace Messier16.Forms.Controls.iOS
             {
                 TabBar.BackgroundColor = _defaultBarBackgroundColor;
             }
+        }
+
+        private void SetBarStyle(){
+            TabBar.BarStyle = FormsTabbedPage.BarStyle == BarStyle.Default ? UIBarStyle.Default : UIBarStyle.Black;
         }
     }
 }
