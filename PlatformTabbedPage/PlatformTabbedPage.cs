@@ -6,9 +6,15 @@ namespace Messier16.Forms.Controls
     [Flags]
     public enum BarBackgroundApplyTo
     {
-        None = 0x01,
-        Android = 0x10,
-        iOS = 0x100
+        None = 1,
+        Android = 2,
+        iOS = 4,
+        Both = Android | iOS
+    }
+
+    public enum BarStyle {
+        Default = 1,
+        Black = 2
     }
 
     public class PlatformTabbedPage : TabbedPage
@@ -29,6 +35,15 @@ namespace Messier16.Forms.Controls
         {
             get => (BarBackgroundApplyTo)GetValue(BarBackgroundApplyToProperty);
             set => SetValue(BarBackgroundApplyToProperty, value);
+        }
+
+        public static readonly BindableProperty BarStyleProperty =
+            BindableProperty.Create(nameof(BarStyle), typeof(BarStyle), typeof(PlatformTabbedPage), BarStyle.Default);
+
+        public BarStyle BarStyle
+        {
+            get => (BarStyle)GetValue(BarStyleProperty);
+            set => SetValue(BarStyleProperty, value);
         }
 
         public new static readonly BindableProperty BarBackgroundColorProperty =

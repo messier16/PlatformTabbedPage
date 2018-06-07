@@ -13,7 +13,8 @@ namespace SampleLocalApp
             Color.FromHex("59182A"),
             Color.FromHex("6616A2"),
             Color.FromHex("E8B254"),
-            Color.FromHex("A57A30")
+            Color.FromHex("A57A30"),
+            Color.FromHex("FFFFFF")
         };
 
         public static Color[] BackgroundColors =
@@ -23,8 +24,11 @@ namespace SampleLocalApp
             Color.FromHex("E6E6E6"),
             Color.FromHex("CACAC9"),
             Color.FromHex("ADADAC"),
+            Color.FromHex("ADADAC"),
             Color.FromHex("979796"),
             Color.FromHex("646464"),
+            Color.FromHex("2CA40F"),
+            Color.FromHex("5A9DFD"),
             Color.Black,
             Color.Default
         };

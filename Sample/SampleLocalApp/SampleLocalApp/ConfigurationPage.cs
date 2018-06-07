@@ -17,9 +17,17 @@ namespace SampleLocalApp
             {"None", BarBackgroundApplyTo.None},
             {"Android", BarBackgroundApplyTo.Android},
             {"iOS", BarBackgroundApplyTo.iOS},
-            {"Both", BarBackgroundApplyTo.iOS |BarBackgroundApplyTo.Android }
+            {"Both", BarBackgroundApplyTo.Both }
         };
 
+        private Dictionary<string, BarStyle> BarStyles = new Dictionary<string, BarStyle>
+        {
+            {"Default", BarStyle.Default},
+            {"Opaque", BarStyle.Black},
+        };
+
+        Picker applyToDdl;
+        Picker applyBarStyleDdl;
         Label SelectedColorLabel;
         Label BarbackgroundColorLabel;
 
@@ -52,16 +60,26 @@ namespace SampleLocalApp
                 UpdateSelectedColors();
             };
 
-            var applyToDdl = new Picker();
+            applyToDdl = new Picker();
             var list = ApplyTo.Keys.ToList();
             foreach (var applyToKey in list)
             {
                 applyToDdl.Items.Add(applyToKey);
             }
-            applyToDdl.SelectedIndex = 1; // Android only
             applyToDdl.SelectedIndexChanged += (sender, args) =>
             {
                 App.HomeTabbedPage.BarBackgroundApplyTo = ApplyTo[list[applyToDdl.SelectedIndex]];
+            };
+
+            applyBarStyleDdl = new Picker();
+            var stylesList = BarStyles.Keys.ToList();
+            foreach (var barStyle in stylesList)
+            {
+                applyBarStyleDdl.Items.Add(barStyle);
+            }
+            applyBarStyleDdl.SelectedIndexChanged += (sender, args) =>
+            {
+                App.HomeTabbedPage.BarStyle = BarStyles[stylesList[applyBarStyleDdl.SelectedIndex]];
             };
 
             Content = new StackLayout
@@ -71,13 +89,18 @@ namespace SampleLocalApp
                     SelectedColorLabel,
                     randomBarBackgroundColor,
                     BarbackgroundColorLabel,
-                    applyToDdl
+                    new Label { HorizontalTextAlignment = TextAlignment.Center, Text="Apply background color to" },
+                    applyToDdl,
+                    new Label { HorizontalTextAlignment = TextAlignment.Center, Text="Baar background style" },
+                    applyBarStyleDdl
                 }
             };
         }
 
         protected override void OnAppearing()
         {
+            applyToDdl.SelectedIndex = 3; // Both
+            applyBarStyleDdl.SelectedIndex = 0;
             UpdateSelectedColors();
         }
 
