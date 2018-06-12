@@ -12,7 +12,8 @@ namespace Messier16.Forms.Controls
         Both = Android | iOS
     }
 
-    public enum BarStyle {
+    public enum BarStyle
+    {
         Default = 1,
         Black = 2
     }
@@ -27,6 +28,16 @@ namespace Messier16.Forms.Controls
             get => (Color)GetValue(SelectedColorProperty);
             set => SetValue(SelectedColorProperty, value);
         }
+
+        public static readonly BindableProperty UnselectedItemTintColorProperty =
+            BindableProperty.Create(nameof(UnselectedItemTintColor), typeof(Color), typeof(PlatformTabbedPage), default(Color));
+
+        public Color UnselectedItemTintColor
+        {
+            get => (Color)GetValue(UnselectedItemTintColorProperty);
+            set => SetValue(UnselectedItemTintColorProperty, value);
+        }
+
 
         public static readonly BindableProperty BarBackgroundApplyToProperty =
             BindableProperty.Create(nameof(BarBackgroundApplyTo), typeof(BarBackgroundApplyTo), typeof(PlatformTabbedPage), BarBackgroundApplyTo.Android);
@@ -54,7 +65,5 @@ namespace Messier16.Forms.Controls
             get => (Color)GetValue(BarBackgroundColorProperty);
             set => SetValue(BarBackgroundColorProperty, value);
         }
-
-
     }
 }

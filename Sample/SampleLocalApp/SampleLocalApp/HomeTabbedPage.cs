@@ -10,13 +10,14 @@ namespace SampleLocalApp
         {
             BarBackgroundColor = App.BackgroundColors[3];
             SelectedColor = App.HighlightColors[0];
+            UnselectedItemTintColor = App.UnselectedItemTintColors[0];
             BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
 
             var page = new ConfigurationPage() { Icon = "config" };
 
             Children.Add(new BasicContentPage("Home") { Icon = "home" });
-            Children.Add(new BasicContentPage("Messages"){ Icon = "message" });
-            Children.Add(new BasicContentPage("Trending"){ Icon = "hashtag" });
+            Children.Add(new BasicContentPage("Messages") { Icon = "message" });
+            Children.Add(new BasicContentPage("Trending") { Icon = "hashtag" });
 
 
             Children.Add(page);
