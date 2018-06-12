@@ -39,7 +39,7 @@ namespace Messier16.Forms.Controls.iOS
 
             _defaultTintColor = TabBar.TintColor;
             _defaultUnselectedItemTintColor = TabBar.UnselectedItemTintColor;
-            _defaultBarBackgroundColor = UIColor.Black;
+            _defaultBarBackgroundColor = TabBar.BarTintColor;
             _barStyle = UIBarStyle.Default;
         }
 
@@ -124,7 +124,7 @@ namespace Messier16.Forms.Controls.iOS
             }
             else
             {
-                TabBar.BackgroundColor = _defaultBarBackgroundColor;
+                TabBar.BarTintColor = _defaultBarBackgroundColor;
             }
         }
 
