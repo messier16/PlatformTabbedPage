@@ -29,6 +29,7 @@ namespace SampleLocalApp
         Picker applyToDdl;
         Picker applyBarStyleDdl;
         Label SelectedColorLabel;
+        Label UnselectedItemColorLabel;
         Label BarbackgroundColorLabel;
 
         public ConfigurationPage()
@@ -40,11 +41,25 @@ namespace SampleLocalApp
             {
                 Text = "Next highlight color"
             };
+
+            var randomUnselectedItemColor = new Button()
+            {
+                Text = "Next unselected item color"
+            };
+
             SelectedColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
             randomSelectedColor.Clicked += (sender, args) =>
             {
                 var ran = tabColorIndex++ % App.HighlightColors.Length;
                 App.HomeTabbedPage.SelectedColor = App.HighlightColors[ran];
+                UpdateSelectedColors();
+            };
+
+            UnselectedItemColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
+            randomUnselectedItemColor.Clicked += (sender, args) =>
+            {
+                var ran = tabColorIndex++ % App.UnselectedItemTintColors.Length;
+                App.HomeTabbedPage.UnselectedItemTintColor = App.UnselectedItemTintColors[ran];
                 UpdateSelectedColors();
             };
 
@@ -86,12 +101,14 @@ namespace SampleLocalApp
             {
                 Children = {
                     randomSelectedColor,
+                    randomUnselectedItemColor,
                     SelectedColorLabel,
+                    UnselectedItemColorLabel,
                     randomBarBackgroundColor,
                     BarbackgroundColorLabel,
                     new Label { HorizontalTextAlignment = TextAlignment.Center, Text="Apply background color to" },
                     applyToDdl,
-                    new Label { HorizontalTextAlignment = TextAlignment.Center, Text="Baar background style" },
+                    new Label { HorizontalTextAlignment = TextAlignment.Center, Text="Bar background style" },
                     applyBarStyleDdl
                 }
             };
@@ -108,9 +125,13 @@ namespace SampleLocalApp
         {
             var selected = App.HomeTabbedPage.SelectedColor;
             var background = App.HomeTabbedPage.BarBackgroundColor;
+            var unselected = App.HomeTabbedPage.UnselectedItemTintColor;
 
             BarbackgroundColorLabel.Text = $"Background R:{background.R * 255:000} G:{background.G * 255:000} B:{background.B * 255:000}";
             SelectedColorLabel.Text = $"Selected R:{selected.R * 255:000} G:{selected.G * 255:000} B:{selected.B * 255:000}";
+            UnselectedItemColorLabel.Text = $"Unselected R:{unselected.R * 255:000} G:{unselected.G * 255:000} B:{unselected.B * 255:000}";
         }
+
+
     }
 }

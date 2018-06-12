@@ -119,7 +119,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.527436" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -130,7 +130,7 @@
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\PlatformTabbedPage\PlatformTabbedPage.csproj">
-      <Project>{a99feee6-582f-4005-90f7-dc4b96228344}</Project>
+      <Project>{DB458B4E-8F03-442D-B65A-15A003488607}</Project>
       <Name>PlatformTabbedPage</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleLocalApp\SampleLocalApp.csproj">
