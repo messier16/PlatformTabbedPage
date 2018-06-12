@@ -126,7 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlatformTabbedPage\PlatformTabbedPage.csproj">
-      <Project>{70708f79-ce2b-4ca5-bed0-84a6e0d53c1a}</Project>
+      <Project>{DB458B4E-8F03-442D-B65A-15A003488607}</Project>
       <Name>PlatformTabbedPage</Name>
     </ProjectReference>
   </ItemGroup>
