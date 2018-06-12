@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using CoreGraphics;
 using Messier16.Forms.Controls;
 using Messier16.Forms.Controls.iOS;
 using UIKit;
@@ -18,6 +19,7 @@ namespace Messier16.Forms.Controls.iOS
 
         PlatformTabbedPage FormsTabbedPage => Element as PlatformTabbedPage;
         UIColor _defaultTintColor;
+        UIColor _defaultUnselectedItemTintColor;
         UIColor _defaultBarBackgroundColor;
         UIBarStyle _barStyle;
 
@@ -36,6 +38,7 @@ namespace Messier16.Forms.Controls.iOS
             }
 
             _defaultTintColor = TabBar.TintColor;
+            _defaultUnselectedItemTintColor = TabBar.UnselectedItemTintColor;
             _defaultBarBackgroundColor = UIColor.Black;
             _barStyle = UIBarStyle.Default;
         }
@@ -47,9 +50,11 @@ namespace Messier16.Forms.Controls.iOS
                 case nameof(PlatformTabbedPage.BarBackgroundColor):
                 case nameof(PlatformTabbedPage.BarStyle):
                 case nameof(PlatformTabbedPage.BarBackgroundApplyTo):
+                case nameof(PlatformTabbedPage.UnselectedItemTintColor):
                     SetBarBackgroundColor();
                     SetBarStyle();
                     SetTintedColor();
+                    SetUnselectedIconColor();
                     break;
                 case nameof(PlatformTabbedPage.SelectedColor):
                     SetTintedColor();
@@ -65,6 +70,7 @@ namespace Messier16.Forms.Controls.iOS
             SetBarStyle();
             SetTintedColor();
             SetBarBackgroundColor();
+            SetUnselectedIconColor();
 
             if (FormsTabbedPage != null)
             {
@@ -100,13 +106,21 @@ namespace Messier16.Forms.Controls.iOS
                 _defaultTintColor;
         }
 
+        private void SetUnselectedIconColor()
+        {
+            TabBar.UnselectedItemTintColor = FormsTabbedPage.UnselectedItemTintColor != default(Color) ?
+                FormsTabbedPage.UnselectedItemTintColor.ToUIColor() :
+                _defaultUnselectedItemTintColor;
+        }
+
         private void SetBarBackgroundColor()
         {
             if (FormsTabbedPage.BarBackgroundApplyTo.HasFlag(BarBackgroundApplyTo.iOS))
             {
-                TabBar.BackgroundColor = FormsTabbedPage.BarBackgroundColor != default(Color)
+                TabBar.BarTintColor = FormsTabbedPage.BarBackgroundColor != default(Color)
                     ? FormsTabbedPage.BarBackgroundColor.ToUIColor()
                     : _defaultBarBackgroundColor;
+
             }
             else
             {
@@ -114,7 +128,8 @@ namespace Messier16.Forms.Controls.iOS
             }
         }
 
-        private void SetBarStyle(){
+        private void SetBarStyle()
+        {
             TabBar.BarStyle = FormsTabbedPage.BarStyle == BarStyle.Default ? UIBarStyle.Default : UIBarStyle.Black;
         }
     }
