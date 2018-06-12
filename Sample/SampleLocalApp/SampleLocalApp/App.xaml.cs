@@ -14,7 +14,8 @@ namespace SampleLocalApp
             Color.FromHex("6616A2"),
             Color.FromHex("E8B254"),
             Color.FromHex("A57A30"),
-            Color.FromHex("FFFFFF")
+            Color.FromHex("FFFFFF"),
+            Color.Default
         };
 
         public static Color[] UnselectedItemTintColors =
@@ -27,7 +28,8 @@ namespace SampleLocalApp
             Color.FromHex("6616A2"),
             Color.FromHex("E8B254"),
             Color.FromHex("A57A30"),
-            Color.FromHex("FFFFFF")
+            Color.FromHex("FFFFFF"),
+            Color.Default
         };
 
         public static Color[] BackgroundColors =
