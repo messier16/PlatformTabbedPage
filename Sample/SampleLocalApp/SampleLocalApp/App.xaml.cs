@@ -17,10 +17,23 @@ namespace SampleLocalApp
             Color.FromHex("FFFFFF")
         };
 
+        public static Color[] UnselectedItemTintColors =
+        {
+            Color.FromHex("3C8A3F"), // Mi color
+            Color.FromHex("3C91C8"),
+            Color.FromHex("F75707"),
+            Color.FromHex("AFFF3F"),
+            Color.FromHex("59182A"),
+            Color.FromHex("6616A2"),
+            Color.FromHex("E8B254"),
+            Color.FromHex("A57A30"),
+            Color.FromHex("FFFFFF")
+        };
+
         public static Color[] BackgroundColors =
         {
-            Color.FromHex("eeeef2"), // My color
-            Color.FromHex("FFFFFF"),
+            Color.FromHex("EEEEF2"), // My color
+            Color.FromHex("3C8A3F"),
             Color.FromHex("E6E6E6"),
             Color.FromHex("CACAC9"),
             Color.FromHex("ADADAC"),
