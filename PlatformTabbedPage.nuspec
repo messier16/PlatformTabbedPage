@@ -2,19 +2,19 @@
 <package>
   <metadata>
     <id>PlatformTabbedPage</id>
-    <version>2.0.0-beta</version>
+    <version>2.2.0-beta</version>
     <title>PlatformTabbedPage for Xamarin.Forms</title>
     <authors>Antonio Feregrino</authors>
     <owners>Messier16</owners>
     <projectUrl>https://github.com/messier16/PlatformTabbedPage</projectUrl>
     <iconUrl>https://i.imgur.com/xuPIn3J.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Make your Xamarin.Forms tabbed pages look more familiar to your users. built against 2.3.4.267</description>
+    <description>Make your Xamarin.Forms tabbed pages look more familiar to your users. built against 2.5.1.527436</description>
     <releaseNotes></releaseNotes>
     <copyright>Antonio Feregrino, 2018</copyright>
     <tags>Xamarin.Forms, Tabs</tags>
     <dependencies>
-      <dependency id="Xamarin.Forms" version="2.5.1.444934" />
+      <dependency id="Xamarin.Forms" version="2.5.1.527436" />
     </dependencies>
   </metadata>  
   <files>
